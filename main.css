@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+/* font-family: 'Roboto', sans-serif; */
+:root {
+  --gray: #414041;
+  --white: #efefef;
+  --orange: #f79a64;
+  --lightGray: #696969;
+  --orangeShadow: #f79a648c;
+  --greenShadow: #40d6bd7a;
+}
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  color: var(--gray);
+  text-transform: uppercase;
+  text-shadow: 0 0 5px var(--greenShadow);
+}
+
+h1 {
+  margin-top: 2em;
+  font-size: 4em;
+}
+h3 {
+  margin-top: 1em;
+  font-size: 2em;
+}
+
+html {
+  background: #40d6bc url(img/ocean.jpg);
+  height: 100vh;
+  background-size: cover;
+  text-align: center;
+  font-size: 10px;
+}
+
+.clock {
+  width: 40rem;
+  height: 40rem;
+  border: 20px solid var(--white);
+  border-radius: 50%;
+  margin: 80px auto;
+  position: relative;
+  padding: 2rem;
+  -webkit-box-shadow: 0 0 10px var(--orangeShadow),
+    inset 0 0 10px var(--orangeShadow);
+  box-shadow: 0 0 10px var(--orangeShadow), inset 0 0 10px var(--orangeShadow);
+  background: url(https://image.ibb.co/fLo2an/sasha_instagram_com_sanfrancisco_259980.jpg);
+  background-size: cover;
+}
+
+.clock-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translateY(-3px);
+  -ms-transform: translateY(-3px);
+  transform: translateY(-3px); /* account for the height of the clock hands */
+  z-index: 0;
+}
+
+.hand {
+  width: 50%;
+  height: 6px;
+  background: var(--gray);
+  position: absolute;
+  top: 50%;
+  -webkit-transform-origin: 100%;
+  -ms-transform-origin: 100%;
+  transform-origin: 100%;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  -webkit-box-shadow: 1px 1px 10px var(--gray);
+  box-shadow: 1px 1px 10px var(--gray);
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transition-timing-function: cubic-bezier(0.79, 0.14, 0.15, 0.86);
+  -o-transition-timing-function: cubic-bezier(0.79, 0.14, 0.15, 0.86);
+  transition-timing-function: cubic-bezier(0.79, 0.14, 0.15, 0.86);
+}
+
+.hour-hand {
+  background: var(--orange);
+}
+.min-hand {
+  background: var(--lightGray);
+}
+
+@media (max-width: 500px) {
+  html {
+    background-size: contain;
+  }
+  .clock-face {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
+    transform: translateY(-3px); /* account for the height of the clock hands */
+    z-index: 1;
+  }
+  .clock {
+    width: 20rem;
+    height: 20rem;
+    border: 10px solid var(--white);
+    background-size: contain;
+    z-index: -1;
+  }
+  h1 {
+    margin-top: 2em;
+    font-size: 2em;
+  }
+  h3 {
+    margin-top: 1em;
+    font-size: 1.5em;
+  }
+}
